@@ -7,7 +7,7 @@
     "schema": "ts-json-schema-generator --path './request.ts' -o ./schema/request.json"
   },
   "files": [
-    "*.d.ts"
+    "*.ts"
   ],
   "types": "dist/index.d.ts",
   "devDependencies": {
