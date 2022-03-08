@@ -31,6 +31,7 @@
     "@zeplo/errors": "^2.0.8",
     "@zeplo/types": "^2.0.10",
     "express": "^4.17.3",
+    "express-async-handler": "^1.2.0",
     "lodash": "^4.17.21",
     "uuid": "^8.3.2"
   }
