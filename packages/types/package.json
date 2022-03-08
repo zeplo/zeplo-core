@@ -1,6 +1,6 @@
 {
   "name": "@zeplo/types",
-  "version": "2.0.8",
+  "version": "2.0.9",
   "description": "Common types for Zeplo",
   "scripts": {
     "test": "tsc",
