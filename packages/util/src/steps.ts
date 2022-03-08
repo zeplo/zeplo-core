@@ -7,7 +7,7 @@ import {
 } from 'lodash'
 import { parseRequest } from './parse'
 
-export async function createStepsJobs (workspaceId: string, req: Request) {
+export function createStepsJobs (workspaceId: string, req: Request) {
   const data = req.body
   const parentId = `${uuid()}-iow`
   const parentRequest = parseRequest(parentId, workspaceId, req, 'step')
@@ -77,7 +77,7 @@ export async function createStepsJobs (workspaceId: string, req: Request) {
     return stepRequest
   })
 
-  return jobs
+  return { id: parentId, jobs }
 }
 
 export function hasCyclicalDependency (
