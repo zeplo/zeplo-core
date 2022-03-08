@@ -1,0 +1,24 @@
+{
+	"compilerOptions": {
+		"target": "esnext",
+		"moduleResolution": "node",
+		"module": "commonjs",
+		"allowJs": true,
+		"noEmit": false,
+		"strict": true,
+		"isolatedModules": true,
+		"esModuleInterop": true,
+		"resolveJsonModule": true,
+		"declaration": true,
+		"skipLibCheck": true,
+		"baseUrl": "src",
+		"outDir": "dist"
+	},
+	"include": [
+		"src"
+	],
+	"exclude": [
+		"node_modules",
+		"**/*.spec.ts"
+	]
+}
