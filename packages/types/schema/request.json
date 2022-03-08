@@ -1,0 +1,282 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "Method": {
+      "enum": [
+        "get",
+        "GET",
+        "delete",
+        "DELETE",
+        "head",
+        "HEAD",
+        "options",
+        "OPTIONS",
+        "post",
+        "POST",
+        "put",
+        "PUT",
+        "patch",
+        "PATCH",
+        "link",
+        "LINK",
+        "unlink",
+        "UNLINK"
+      ],
+      "type": "string"
+    },
+    "Request": {
+      "additionalProperties": false,
+      "properties": {
+        "_source": {
+          "$ref": "#/definitions/RequestFeatures"
+        },
+        "attempts": {
+          "type": "number"
+        },
+        "cron": {
+          "items": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "type": "array"
+        },
+        "delay": {
+          "type": "number"
+        },
+        "delayuntil": {
+          "type": "number"
+        },
+        "duration": {
+          "type": "number"
+        },
+        "end": {
+          "type": "number"
+        },
+        "env": {
+          "type": "string"
+        },
+        "id": {
+          "description": "Unique ID in format <uuidv4>-<3-letter-zone>",
+          "minimum": 0,
+          "type": "string"
+        },
+        "ignored": {
+          "type": "boolean"
+        },
+        "interval": {
+          "type": "number"
+        },
+        "key": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "request": {
+          "$ref": "#/definitions/RequestRequest"
+        },
+        "response": {
+          "$ref": "#/definitions/RequestResponse"
+        },
+        "retry": {
+          "$ref": "#/definitions/RequestRetry"
+        },
+        "source": {
+          "$ref": "#/definitions/RequestSource"
+        },
+        "start": {
+          "type": "number"
+        },
+        "status": {
+          "$ref": "#/definitions/RequestStatus"
+        },
+        "timezone": {
+          "type": "string"
+        },
+        "trace": {
+          "type": "string"
+        },
+        "workspace": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "_source",
+        "attempts",
+        "duration",
+        "end",
+        "id",
+        "key",
+        "request",
+        "source",
+        "start",
+        "status",
+        "workspace"
+      ],
+      "type": "object"
+    },
+    "RequestFeatures": {
+      "additionalProperties": false,
+      "properties": {
+        "attempts": {
+          "type": "number"
+        },
+        "cron": {
+          "items": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "type": "array"
+        },
+        "delay": {
+          "type": "number"
+        },
+        "delayuntil": {
+          "type": "number"
+        },
+        "interval": {
+          "type": "number"
+        },
+        "retry": {
+          "$ref": "#/definitions/RequestRetry"
+        },
+        "timezone": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "attempts"
+      ],
+      "type": "object"
+    },
+    "RequestRequest": {
+      "additionalProperties": false,
+      "properties": {
+        "body": {
+          "type": "string"
+        },
+        "hasbody": {
+          "type": "boolean"
+        },
+        "headers": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "type": "object"
+        },
+        "host": {
+          "type": "string"
+        },
+        "method": {
+          "$ref": "#/definitions/Method"
+        },
+        "params": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "type": "object"
+        },
+        "path": {
+          "type": "string"
+        },
+        "scheme": {
+          "enum": [
+            "http",
+            "https"
+          ],
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "method",
+        "url",
+        "scheme",
+        "host",
+        "path"
+      ],
+      "type": "object"
+    },
+    "RequestResponse": {
+      "additionalProperties": false,
+      "properties": {
+        "body": {
+        },
+        "end": {
+          "type": "number"
+        },
+        "hasbody": {
+          "type": "boolean"
+        },
+        "headers": {
+        },
+        "start": {
+          "type": "number"
+        },
+        "status": {
+          "type": "number"
+        },
+        "statusText": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "status",
+        "statusText",
+        "headers"
+      ],
+      "type": "object"
+    },
+    "RequestRetry": {
+      "additionalProperties": false,
+      "properties": {
+        "backoff": {
+          "$ref": "#/definitions/RequestRetryBackoff"
+        },
+        "max": {
+          "type": "number"
+        },
+        "time": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "max",
+        "backoff"
+      ],
+      "type": "object"
+    },
+    "RequestRetryBackoff": {
+      "enum": [
+        "FIXED",
+        "EXPONENTIAL",
+        "IMMEDIATE"
+      ],
+      "type": "string"
+    },
+    "RequestSource": {
+      "enum": [
+        "REQUEST",
+        "SCHEDULE",
+        "RETRY"
+      ],
+      "type": "string"
+    },
+    "RequestStatus": {
+      "enum": [
+        "ACTIVE",
+        "PENDING",
+        "ERROR",
+        "SUCCESS",
+        "INACTIVE"
+      ],
+      "type": "string"
+    }
+  }
+}

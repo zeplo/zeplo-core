@@ -1,0 +1,21 @@
+{
+  "name": "@zeplo/types",
+  "version": "2.0.0",
+  "description": "Common types for Zeplo",
+  "scripts": {
+    "test": "tsc",
+    "schema": "ts-json-schema-generator --path './request.ts' -o ./schema/request.json"
+  },
+  "files": [
+    "*.d.ts"
+  ],
+  "types": "dist/index.d.ts",
+  "devDependencies": {
+    "typescript": "4.5.5"
+  },
+  "dependencies": {
+    "axios": "^0.26.0",
+    "stripe": "^8.207.0"
+  },
+  "packageManager": "yarn@3.2.0"
+}
