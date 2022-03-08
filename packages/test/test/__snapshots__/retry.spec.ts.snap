@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`retry.spec retry GET request * 3 with 404 error 1`] = `
+Object {
+  "hasbody": false,
+  "headers": Object {
+    "accept": "application/json, text/plain, */*",
+    "user-agent": "axios/0.26.0",
+  },
+  "host": "postman-echo.com",
+  "method": "GET",
+  "params": Object {},
+  "path": "/post",
+  "scheme": "https",
+  "url": "https://postman-echo.com/post",
+}
+`;
+
+exports[`retry.spec retry GET request * 3 with initial success - using _retry param 1`] = `
+Object {
+  "hasbody": false,
+  "headers": Object {
+    "accept": "application/json, text/plain, */*",
+    "user-agent": "axios/0.26.0",
+  },
+  "host": "postman-echo.com",
+  "method": "GET",
+  "params": Object {},
+  "path": "/get",
+  "scheme": "https",
+  "url": "https://postman-echo.com/get",
+}
+`;
+
+exports[`retry.spec retry GET request * 3 with initial success - using X-Zeplo-Retry param 1`] = `
+Object {
+  "hasbody": false,
+  "headers": Object {
+    "accept": "application/json, text/plain, */*",
+    "user-agent": "axios/0.26.0",
+  },
+  "host": "postman-echo.com",
+  "method": "GET",
+  "params": Object {},
+  "path": "/get",
+  "scheme": "https",
+  "url": "https://postman-echo.com/get",
+}
+`;

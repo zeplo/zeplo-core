@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`delay.spec add delayed request using _delay param 1`] = `
+Object {
+  "hasbody": false,
+  "headers": Object {
+    "accept": "application/json, text/plain, */*",
+    "user-agent": "axios/0.26.0",
+  },
+  "host": "postman-echo.com",
+  "method": "GET",
+  "params": Object {},
+  "path": "/get",
+  "scheme": "https",
+  "url": "https://postman-echo.com/get",
+}
+`;
+
+exports[`delay.spec add delayed request using X-Zeplo-Delay header 1`] = `
+Object {
+  "hasbody": false,
+  "headers": Object {
+    "accept": "application/json, text/plain, */*",
+    "user-agent": "axios/0.26.0",
+  },
+  "host": "postman-echo.com",
+  "method": "GET",
+  "params": Object {},
+  "path": "/get",
+  "scheme": "https",
+  "url": "https://postman-echo.com/get",
+}
+`;

@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`step.spec multi step request with double dependency 1`] = `
+Object {
+  "hasbody": true,
+  "headers": Object {
+    "accept": "application/json, text/plain, */*",
+    "content-type": "application/json",
+    "user-agent": "axios/0.26.0",
+  },
+  "host": "step",
+  "method": "POST",
+  "params": Object {},
+  "path": "/",
+  "scheme": "https",
+  "url": "https://step",
+}
+`;
+
+exports[`step.spec single step request 1`] = `
+Object {
+  "hasbody": true,
+  "headers": Object {
+    "accept": "application/json, text/plain, */*",
+    "content-type": "application/json",
+    "user-agent": "axios/0.26.0",
+  },
+  "host": "step",
+  "method": "POST",
+  "params": Object {},
+  "path": "/",
+  "scheme": "https",
+  "url": "https://step",
+}
+`;
+
+exports[`step.spec two step request with dependency 1`] = `
+Object {
+  "hasbody": true,
+  "headers": Object {
+    "accept": "application/json, text/plain, */*",
+    "content-type": "application/json",
+    "user-agent": "axios/0.26.0",
+  },
+  "host": "step",
+  "method": "POST",
+  "params": Object {},
+  "path": "/",
+  "scheme": "https",
+  "url": "https://step",
+}
+`;

@@ -17,5 +17,6 @@
     "axios": "^0.26.0",
     "stripe": "^8.207.0"
   },
-  "packageManager": "yarn@3.2.0"
+  "packageManager": "yarn@3.2.0",
+  "gitHead": "387cdd4fbf18e97e0501ee7a528052bf5d4ddf11"
 }

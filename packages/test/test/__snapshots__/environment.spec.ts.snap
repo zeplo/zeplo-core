@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`environment.spec queue with _env attribute 1`] = `
+Object {
+  "hasbody": false,
+  "headers": Object {
+    "accept": "application/json, text/plain, */*",
+    "user-agent": "axios/0.26.0",
+  },
+  "host": "postman-echo.com",
+  "method": "GET",
+  "params": Object {},
+  "path": "/get",
+  "scheme": "https",
+  "url": "https://postman-echo.com/get",
+}
+`;

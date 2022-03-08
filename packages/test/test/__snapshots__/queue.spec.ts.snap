@@ -1,0 +1,153 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`queue.spec queue DELETE request 1`] = `
+Object {
+  "hasbody": false,
+  "headers": Object {
+    "accept": "application/json, text/plain, */*",
+    "user-agent": "axios/0.26.0",
+  },
+  "host": "postman-echo.com",
+  "method": "DELETE",
+  "params": Object {},
+  "path": "/delete",
+  "scheme": "https",
+  "url": "https://postman-echo.com/delete",
+}
+`;
+
+exports[`queue.spec queue GET request 1`] = `
+Object {
+  "hasbody": false,
+  "headers": Object {
+    "accept": "application/json, text/plain, */*",
+    "user-agent": "axios/0.26.0",
+  },
+  "host": "postman-echo.com",
+  "method": "GET",
+  "params": Object {},
+  "path": "/get",
+  "scheme": "https",
+  "url": "https://postman-echo.com/get",
+}
+`;
+
+exports[`queue.spec queue GET request with error 1`] = `
+Object {
+  "hasbody": false,
+  "headers": Object {
+    "accept": "application/json, text/plain, */*",
+    "user-agent": "axios/0.26.0",
+  },
+  "host": "postman-echo.com",
+  "method": "GET",
+  "params": Object {},
+  "path": "/post",
+  "scheme": "https",
+  "url": "https://postman-echo.com/post",
+}
+`;
+
+exports[`queue.spec queue GET request without scheme 1`] = `
+Object {
+  "hasbody": false,
+  "headers": Object {
+    "accept": "application/json, text/plain, */*",
+    "user-agent": "axios/0.26.0",
+  },
+  "host": "postman-echo.com",
+  "method": "GET",
+  "params": Object {},
+  "path": "/get",
+  "scheme": "https",
+  "url": "https://postman-echo.com/get",
+}
+`;
+
+exports[`queue.spec queue PATCH request 1`] = `
+Object {
+  "hasbody": true,
+  "headers": Object {
+    "accept": "application/json, text/plain, */*",
+    "content-type": "application/json",
+    "user-agent": "axios/0.26.0",
+  },
+  "host": "postman-echo.com",
+  "method": "PATCH",
+  "params": Object {},
+  "path": "/patch",
+  "scheme": "https",
+  "url": "https://postman-echo.com/patch",
+}
+`;
+
+exports[`queue.spec queue POST request 1`] = `
+Object {
+  "hasbody": false,
+  "headers": Object {
+    "accept": "application/json, text/plain, */*",
+    "content-type": "application/x-www-form-urlencoded",
+    "user-agent": "axios/0.26.0",
+  },
+  "host": "postman-echo.com",
+  "method": "POST",
+  "params": Object {},
+  "path": "/post",
+  "scheme": "https",
+  "url": "https://postman-echo.com/post",
+}
+`;
+
+exports[`queue.spec queue POST request with header, params and JSON body 1`] = `
+Object {
+  "hasbody": true,
+  "headers": Object {
+    "accept": "application/json, text/plain, */*",
+    "content-type": "application/json",
+    "user-agent": "axios/0.26.0",
+    "x-custom-header": "123",
+  },
+  "host": "postman-echo.com",
+  "method": "POST",
+  "params": Object {
+    "x": "1",
+    "y": "2",
+  },
+  "path": "/post",
+  "scheme": "https",
+}
+`;
+
+exports[`queue.spec queue POST request with url-enconded 1`] = `
+Object {
+  "hasbody": true,
+  "headers": Object {
+    "accept": "application/json, text/plain, */*",
+    "content-type": "application/x-www-form-urlencoded",
+    "user-agent": "axios/0.26.0",
+  },
+  "host": "postman-echo.com",
+  "method": "POST",
+  "params": Object {},
+  "path": "/post",
+  "scheme": "https",
+  "url": "https://postman-echo.com/post",
+}
+`;
+
+exports[`queue.spec queue PUT request 1`] = `
+Object {
+  "hasbody": false,
+  "headers": Object {
+    "accept": "application/json, text/plain, */*",
+    "content-type": "application/x-www-form-urlencoded",
+    "user-agent": "axios/0.26.0",
+  },
+  "host": "postman-echo.com",
+  "method": "PUT",
+  "params": Object {},
+  "path": "/put",
+  "scheme": "https",
+  "url": "https://postman-echo.com/put",
+}
+`;

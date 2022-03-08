@@ -1,0 +1,159 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`bulk.spec bulk request with 2 urls 1`] = `
+Object {
+  "hasbody": false,
+  "headers": Object {},
+  "host": "postman-echo.com",
+  "method": "POST",
+  "params": Object {},
+  "path": "/post",
+  "scheme": "https",
+  "url": "https://postman-echo.com/post",
+}
+`;
+
+exports[`bulk.spec bulk request with 2 urls 2`] = `
+Object {
+  "hasbody": false,
+  "headers": Object {},
+  "host": "postman-echo.com",
+  "method": "POST",
+  "params": Object {},
+  "path": "/post",
+  "scheme": "https",
+  "url": "https://postman-echo.com/post",
+}
+`;
+
+exports[`bulk.spec bulk request with GET method 1`] = `
+Object {
+  "hasbody": false,
+  "headers": Object {},
+  "host": "postman-echo.com",
+  "method": "GET",
+  "params": Object {},
+  "path": "/get",
+  "scheme": "https",
+  "url": "https://postman-echo.com/get",
+}
+`;
+
+exports[`bulk.spec bulk request with header param 1`] = `
+Object {
+  "hasbody": false,
+  "headers": Object {
+    "x-custom-header": "123",
+  },
+  "host": "postman-echo.com",
+  "method": "POST",
+  "params": Object {},
+  "path": "/post",
+  "scheme": "https",
+  "url": "https://postman-echo.com/post",
+}
+`;
+
+exports[`bulk.spec bulk request with header, params and body 1`] = `
+Object {
+  "hasbody": true,
+  "headers": Object {
+    "content-type": "application/json",
+    "x-custom-header": "123",
+  },
+  "host": "postman-echo.com",
+  "method": "POST",
+  "params": Object {
+    "x": 1,
+    "y": "2",
+  },
+  "path": "/post",
+  "scheme": "https",
+}
+`;
+
+exports[`bulk.spec bulk request with json body 1`] = `
+Object {
+  "hasbody": true,
+  "headers": Object {
+    "content-type": "application/json",
+  },
+  "host": "postman-echo.com",
+  "method": "POST",
+  "params": Object {},
+  "path": "/post",
+  "scheme": "https",
+  "url": "https://postman-echo.com/post",
+}
+`;
+
+exports[`bulk.spec bulk request with query param in body 1`] = `
+Object {
+  "hasbody": false,
+  "headers": Object {},
+  "host": "postman-echo.com",
+  "method": "POST",
+  "params": Object {
+    "x": "1",
+  },
+  "path": "/post",
+  "scheme": "https",
+  "url": "https://postman-echo.com/post?x=1",
+}
+`;
+
+exports[`bulk.spec bulk request with query param on URL 1`] = `
+Object {
+  "hasbody": false,
+  "headers": Object {},
+  "host": "postman-echo.com",
+  "method": "POST",
+  "params": Object {
+    "x": "1",
+  },
+  "path": "/post",
+  "scheme": "https",
+  "url": "https://postman-echo.com/post?x=1",
+}
+`;
+
+exports[`bulk.spec bulk request with text body 1`] = `
+Object {
+  "hasbody": true,
+  "headers": Object {
+    "content-type": "text/plain",
+  },
+  "host": "postman-echo.com",
+  "method": "POST",
+  "params": Object {},
+  "path": "/post",
+  "scheme": "https",
+  "url": "https://postman-echo.com/post",
+}
+`;
+
+exports[`bulk.spec single bulk request with URL only 1`] = `
+Object {
+  "hasbody": false,
+  "headers": Object {},
+  "host": "postman-echo.com",
+  "method": "POST",
+  "params": Object {},
+  "path": "/post",
+  "scheme": "https",
+  "url": "https://postman-echo.com/post",
+}
+`;
+
+exports[`bulk.spec single bulk request with URL without scheme 1`] = `
+Object {
+  "hasbody": false,
+  "headers": Object {},
+  "host": "postman-echo.com",
+  "method": "POST",
+  "params": Object {},
+  "path": "/post",
+  "scheme": "https",
+  "url": "https://postman-echo.com/post",
+}
+`;
