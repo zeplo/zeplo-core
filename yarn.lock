@@ -2972,20 +2972,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@prisma/client@npm:3.9.2":
-  version: 3.9.2
-  resolution: "@prisma/client@npm:3.9.2"
-  dependencies:
-    "@prisma/engines-version": 3.9.0-58.bcc2ff906db47790ee902e7bbc76d7ffb1893009
-  peerDependencies:
-    prisma: "*"
-  peerDependenciesMeta:
-    prisma:
-      optional: true
-  checksum: 5b4b8f252624250f609d57ed3939f3dbecb174c297691476050f48d6c24dd41ca2f70f9e5a52729a4e875527e56a2d564a116c0ada8f5fc935c558f09d2759e3
-  languageName: node
-  linkType: hard
-
 "@prisma/client@npm:^3.10.0":
   version: 3.10.0
   resolution: "@prisma/client@npm:3.10.0"
@@ -3004,20 +2990,6 @@ __metadata:
   version: 3.10.0-50.73e60b76d394f8d37d8ebd1f8918c79029f0db86
   resolution: "@prisma/engines-version@npm:3.10.0-50.73e60b76d394f8d37d8ebd1f8918c79029f0db86"
   checksum: ddcb3bfdab61ac74e2df9e57562ccc7f0eb863955c8cf711f52f45572168f65e030e5070dfc9fc2e37d916b97b236576006b5cd56c813257a96b825c598e79fa
-  languageName: node
-  linkType: hard
-
-"@prisma/engines-version@npm:3.9.0-58.bcc2ff906db47790ee902e7bbc76d7ffb1893009":
-  version: 3.9.0-58.bcc2ff906db47790ee902e7bbc76d7ffb1893009
-  resolution: "@prisma/engines-version@npm:3.9.0-58.bcc2ff906db47790ee902e7bbc76d7ffb1893009"
-  checksum: 413d478fc1980604de1f46a0d53ae6c752965283a7d8c51d8fb3881c371b4a71ab4aa10002dba411d961286caf1141871c3c85d209a316421cdf1e1fdac71b4e
-  languageName: node
-  linkType: hard
-
-"@prisma/engines@npm:3.10.0-50.73e60b76d394f8d37d8ebd1f8918c79029f0db86":
-  version: 3.10.0-50.73e60b76d394f8d37d8ebd1f8918c79029f0db86
-  resolution: "@prisma/engines@npm:3.10.0-50.73e60b76d394f8d37d8ebd1f8918c79029f0db86"
-  checksum: 7faa8659dd72e70f9b24be291e3660d086d5b2ee1b6557bf783100a2efaf4f7087882196191c845f96c3953a55ea8bcb03110af98a18e803b90084c0c2211444
   languageName: node
   linkType: hard
 
@@ -3534,7 +3506,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@zeplo/errors@workspace:packages/errors"
   dependencies:
-    "@prisma/client": 3.9.2
     "@types/fs-extra": ^9.0.13
     "@types/lodash": ^4.14.178
     "@types/node": ^17.0.18
@@ -3542,10 +3513,7 @@ __metadata:
     "@typescript-eslint/parser": ^5.12.0
     env-cmd: ^10.1.0
     eslint: ^8.9.0
-    fs-extra: ^10.0.0
-    lodash: ^4.17.21
-    openai: ^2.0.2
-    prisma: ^3.9.2
+    rimraf: ^3.0.2
     ts-node: ^10.5.0
     ts-node-dev: ^1.1.8
     typescript: ^4.5.5
@@ -7278,17 +7246,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fs-extra@npm:^10.0.0":
-  version: 10.0.1
-  resolution: "fs-extra@npm:10.0.1"
-  dependencies:
-    graceful-fs: ^4.2.0
-    jsonfile: ^6.0.1
-    universalify: ^2.0.0
-  checksum: c1faaa5eb9e1c5c7c7ff09f966e93922ecb068ae1b04801cfc983ef05fcc1f66bfbb8d8d0b745c910014c7a2e7317fb6cf3bfe7390450c1157e3cc1a218f221d
-  languageName: node
-  linkType: hard
-
 "fs-extra@npm:^8.1.0":
   version: 8.1.0
   resolution: "fs-extra@npm:8.1.0"
@@ -10452,16 +10409,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"openai@npm:^2.0.2":
-  version: 2.0.4
-  resolution: "openai@npm:2.0.4"
-  dependencies:
-    axios: ^0.26.0
-    form-data: ^4.0.0
-  checksum: f298b753a1b114310977e18b111d36aa035988735511771c27ed0fbeaed8751766d0475648ca6bf347929ba0dea1b523fa8208dad1d559d381556aded58fe7a9
-  languageName: node
-  linkType: hard
-
 "optionator@npm:^0.8.1":
   version: 0.8.3
   resolution: "optionator@npm:0.8.3"
@@ -11035,18 +10982,6 @@ __metadata:
     ansi-styles: ^5.0.0
     react-is: ^17.0.1
   checksum: cf610cffcb793885d16f184a62162f2dd0df31642d9a18edf4ca298e909a8fe80bdbf556d5c9573992c102ce8bf948691da91bf9739bee0ffb6e79c8a8a6e088
-  languageName: node
-  linkType: hard
-
-"prisma@npm:^3.9.2":
-  version: 3.10.0
-  resolution: "prisma@npm:3.10.0"
-  dependencies:
-    "@prisma/engines": 3.10.0-50.73e60b76d394f8d37d8ebd1f8918c79029f0db86
-  bin:
-    prisma: build/index.js
-    prisma2: build/index.js
-  checksum: da693ebd69ec5f5a8132a86f1c6e300033a5ea869016e19364f514fdda6143f0d6236982a26b431313f06fecfaa2d1bd82eac3ebbf5b58082271f1a65c8a683d
   languageName: node
   linkType: hard
 
