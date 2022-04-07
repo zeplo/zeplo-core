@@ -20,7 +20,8 @@ export function parseRequest (
   const derivedUrl = originalUrl ?? req.url
   const url = derivedUrl.startsWith('http') ? derivedUrl : `https://${derivedUrl}`
   const urlObj = new URL(url)
-  const derivedQuery = merge({}, req.query, queryString.parseUrl(url).query, req.params)
+  const parsedUrl = queryString.parseUrl(url)
+  const derivedQuery = merge({}, req.query, parsedUrl.query, req.params)
 
   const received = +(new Date()) / 1000
   const features = getRequestFeatures(derivedQuery, req.headers)
@@ -48,7 +49,7 @@ export function parseRequest (
     status: received === start ? 'ACTIVE' : 'PENDING',
     source: 'REQUEST',
     request: {
-      url: queryString.stringifyUrl({ url, query }),
+      url: queryString.stringifyUrl({ url: parsedUrl.url, query }),
       host: urlObj.host,
       path: urlObj.pathname,
       method: (method ?? 'POST') as Method,
