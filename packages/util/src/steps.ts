@@ -77,7 +77,7 @@ export function createStepsJobs (workspaceId: string, req: Request) {
     return stepRequest
   })
 
-  return { id: parentId, jobs }
+  return { id: parentId, request: parentRequest, jobs }
 }
 
 export function hasCyclicalDependency (
