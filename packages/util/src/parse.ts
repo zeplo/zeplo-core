@@ -3,8 +3,9 @@ import queryString from 'query-string'
 import { Request as ZeploRequest, RequestFeatures, RequestRetryBackoff } from '@zeplo/types/request'
 import { Method } from 'axios'
 import {
-  isArray, isString, toNumber, map, forEach, fromPairs, merge, isPlainObject, isNumber,
+  isArray, isString, map, forEach, fromPairs, merge, isPlainObject, isNumber,
 } from 'lodash'
+import { toNumber } from 'cast'
 import { cleanHeaders, cleanQuery } from './clean'
 
 export function parseRequest (
@@ -46,7 +47,7 @@ export function parseRequest (
     received,
     updated: received,
     start: getStartTimeFromFeatures(features, received),
-    status: received === start ? 'ACTIVE' : 'PENDING',
+    status: received === start && (!features.step || !features.requires) ? 'ACTIVE' : 'PENDING',
     source: 'REQUEST',
     request: {
       url: queryString.stringifyUrl({ url: parsedUrl.url, query }),
@@ -94,7 +95,7 @@ export function getRequestFeatures (query?: Request['query'], headers?: Request[
   if (retry) {
     const parts = retry.split('|')
     features.retry = {
-      max: isString(parts[0]) && !Number.isNaN(toNumber(parts[0])) ? toNumber(parts[0]) : 1,
+      max: toNumber(parts[0]) ?? 1,
       backoff: getBackoff(parts[1]),
       time: isString(parts[2]) ? toNumber(parts[2]) : 1,
     }
