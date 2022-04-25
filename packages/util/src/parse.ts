@@ -5,7 +5,7 @@ import { Method } from 'axios'
 import {
   isArray, isString, map, forEach, fromPairs, merge, isPlainObject, isNumber,
 } from 'lodash'
-import { toNumber } from 'cast'
+import { toNumber } from './cast'
 import { cleanHeaders, cleanQuery } from './clean'
 
 export function parseRequest (
