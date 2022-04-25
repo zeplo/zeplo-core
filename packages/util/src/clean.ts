@@ -17,6 +17,7 @@ export function cleanQuery (query?: Request['query'], headers?: Request['headers
     '_env',
     '_requires',
     '_step',
+    '_index',
   ])
 }
 
@@ -41,6 +42,7 @@ export function cleanHeaders (headers?: Request['headers']) {
     'x-zeplo-requires',
     'x-zeplo-step',
     'x-zeplo-no-conflict',
+    'x-zeplo-index',
 
     // Ralley keys
     'x-ralley-key',
