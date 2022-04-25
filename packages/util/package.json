@@ -1,6 +1,6 @@
 {
   "name": "@zeplo/util",
-  "version": "2.0.14",
+  "version": "2.0.15",
   "main": "dist/index.js",
   "files": [
     "dist/*"
@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "@zeplo/errors": "^2.0.8",
-    "@zeplo/types": "^2.0.10",
+    "@zeplo/types": "^2.0.15",
     "express": "^4.17.3",
     "express-async-handler": "^1.2.0",
     "lodash": "^4.17.21",
