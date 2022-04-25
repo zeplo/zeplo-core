@@ -2,6 +2,7 @@ import { Request } from 'express'
 import queryString from 'query-string'
 import { Request as ZeploRequest, RequestFeatures, RequestRetryBackoff } from '@zeplo/types/request'
 import { Method } from 'axios'
+import { v4 as uuid } from 'uuid'
 import {
   isArray, isString, map, forEach, fromPairs, merge, isPlainObject, isNumber,
 } from 'lodash'
@@ -61,6 +62,7 @@ export function parseRequest (
       hasbody: !!body,
       start: received,
     },
+    cursor: uuid()
   }
 }
 
