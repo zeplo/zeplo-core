@@ -82,6 +82,7 @@ export function getRequestFeatures (query?: Request['query'], headers?: Request[
     key,
     trace,
     step,
+    schedule: false,
   }
 
   if (delayuntil) {
@@ -107,6 +108,10 @@ export function getRequestFeatures (query?: Request['query'], headers?: Request[
 
   if (interval) {
     features.interval = toNumber(interval)
+  }
+
+  if (interval || cron) {
+    features.schedule = true
   }
 
   if (requires) {

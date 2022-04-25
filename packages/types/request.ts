@@ -25,6 +25,7 @@ export interface Request extends RequestFeatures {
   received: number
   updated: number
   worker?: string
+  cursor?: string
   _source?: RequestFeatures
 }
 
@@ -59,6 +60,7 @@ export interface RequestFeatures {
   delayuntil?: number
   interval?: number
   cron?: string[][]
+  schedule: boolean
   attempts: number
   timezone?: string
   /** Name of this requests step - user provided. Defaults to the request UUID */
@@ -67,7 +69,6 @@ export interface RequestFeatures {
   /** Map of step names (user provided) to steps */
   steps?: Record<string, RequestStep>
   env?: string 
-
 }
 
 export interface RequestStep {
