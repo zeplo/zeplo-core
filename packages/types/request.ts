@@ -61,19 +61,27 @@ export interface RequestFeatures {
   cron?: string[][]
   attempts: number
   timezone?: string
+  /** Name of this requests step - user provided. Defaults to the request UUID */
   step?: string
   requires?: Record<string, string>
+  /** Map of step names (user provided) to steps */
   steps?: Record<string, RequestStep>
   env?: string 
 
 }
 
 export interface RequestStep {
+  /** UUID of the job/request, this job will be logged in the system, but will be pending */
   id: string
-  completed?: 1
+  /** Marked as 1 when the job is complete, this is used to determine what can run next */
+  complete?: 1
+  /** Determines whether all require dependencies have completed */
   started?: 1
+  /** The name of the step, as provided by the user */
   step?: string
+  /** Delay before running the step */
   delay?: number
+  /** Map of step dependencies names */
   requires?: Record<string, 1>
 }
 
