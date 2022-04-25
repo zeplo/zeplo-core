@@ -1,6 +1,6 @@
 {
   "name": "@zeplo/util",
-  "version": "2.0.15",
+  "version": "2.0.16",
   "main": "dist/index.js",
   "files": [
     "dist/*"
