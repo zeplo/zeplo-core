@@ -12,6 +12,9 @@ export interface UserAuth {
   workspaces: {
     [key: string]: 1|2
   }
+  workspaceUsers: {
+    [key: string]: string
+  }
 }
 
 export interface User {
