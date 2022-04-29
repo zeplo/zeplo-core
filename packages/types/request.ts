@@ -28,7 +28,10 @@ export interface Request extends RequestFeatures {
   cursor?: string
   webhook?: {
     id: string
-    event: string
+    event: {
+      id: string
+      event: string
+    }
   },
   _source?: RequestFeatures
 }
