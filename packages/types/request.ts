@@ -26,13 +26,11 @@ export interface Request extends RequestFeatures {
   updated: number
   worker?: string
   cursor?: string
-  webhook?: {
+  webhook?: string
+  event?: {
     id: string
-    event: {
-      id: string
-      event: string
-    }
-  },
+    event: string
+  }
   _source?: RequestFeatures
 }
 
