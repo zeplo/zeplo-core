@@ -1,7 +1,7 @@
 import { Method } from 'axios'
 
 export type RequestStatus = 'ACTIVE'|'PENDING'|'ERROR'|'SUCCESS'|'INACTIVE'
-export type RequestSource = 'REQUEST'|'SCHEDULE'|'RETRY'|'STEP'
+export type RequestSource = 'REQUEST'|'SCHEDULE'|'RETRY'|'STEP'|'WEBHOOK'
 
 export interface Request extends RequestFeatures {
   /**
@@ -26,6 +26,10 @@ export interface Request extends RequestFeatures {
   updated: number
   worker?: string
   cursor?: string
+  webhook?: {
+    id: string
+    event: string
+  },
   _source?: RequestFeatures
 }
 
