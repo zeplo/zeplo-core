@@ -24,6 +24,10 @@ export function createStepsJobs (workspaceId: string, req: Request) {
     request.source = 'STEP'
     request.trace = parentId
 
+    if (request.requires) {
+      request.start = 0
+    }
+
     // Ensure step name is set
     if (!request.step) {
       request.step = stepId
