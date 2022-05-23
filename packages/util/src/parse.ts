@@ -48,7 +48,7 @@ export function parseRequest (
     received,
     updated: received,
     start: getStartTimeFromFeatures(features, received),
-    status: received === start && (!features.step || !features.requires) ? 'ACTIVE' : 'PENDING',
+    status: received === start && (!features.step && !features.requires) ? 'ACTIVE' : 'PENDING',
     source: 'REQUEST',
     request: {
       url: queryString.stringifyUrl({ url: parsedUrl.url, query }),
