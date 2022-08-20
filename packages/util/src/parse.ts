@@ -1,6 +1,6 @@
 import { Request } from 'express'
 import queryString from 'query-string'
-import { Request as ZeploRequest, RequestFeatures, RequestRetryBackoff } from '@zeplo/types/request'
+import { Request as ZeploRequest, RequestFeatures, RequestRetryBackoff, RequestSource } from '@zeplo/types/request'
 import { Method } from 'axios'
 import { v4 as uuid } from 'uuid'
 import {
@@ -26,7 +26,7 @@ export function parseRequest (
   const derivedQuery = merge({}, req.query, parsedUrl.query, req.params)
 
   const received = +(new Date()) / 1000
-  const features = getRequestFeatures(derivedQuery, req.headers)
+  const [features, source] = getRequestFeatures(derivedQuery, req.headers)
   const headers = parseRawRequestObject(cleanHeaders(req.headers))
   const query = parseRawRequestObject(cleanQuery(derivedQuery, req.headers))
   const start = getStartTimeFromFeatures(features, received)
@@ -49,7 +49,7 @@ export function parseRequest (
     updated: received,
     start: getStartTimeFromFeatures(features, received),
     status: received === start && (!features.step && !features.requires) ? 'ACTIVE' : 'PENDING',
-    source: 'REQUEST',
+    source: source ? source : 'REQUEST',
     request: {
       url: queryString.stringifyUrl({ url: parsedUrl.url, query }),
       host: urlObj.host,
@@ -72,9 +72,9 @@ export function getStartTimeFromFeatures (features: RequestFeatures, start: numb
   return start
 }
 
-export function getRequestFeatures (query?: Request['query'], headers?: Request['headers']) {
+export function getRequestFeatures (query?: Request['query'], headers?: Request['headers']): [RequestFeatures, RequestSource|null] {
   const {
-    delayuntil, delay, retry, cron, interval, requires, timezone, env, key, trace, step,
+    delayuntil, delay, retry, cron, interval, requires, timezone, env, key, trace, step, source,
   } = getRawFeatures(query, headers)
 
   const features: RequestFeatures = {
@@ -120,7 +120,12 @@ export function getRequestFeatures (query?: Request['query'], headers?: Request[
     features.requires = fromPairs(map(requires.split(','), (s) => [s, 'tbc']))
   }
 
-  return features
+  let validatedSource: RequestSource|null = null
+  if (trace && source && source.toUpperCase() === 'RETRY') {
+    validatedSource = 'RETRY'
+  }
+
+  return [features, validatedSource]
 }
 
 export function getBackoff (backoff?: string): RequestRetryBackoff {
@@ -145,6 +150,7 @@ export function getRawFeatures (query?: Request['query'], headers?: Request['hea
     env: getValueFromQueryOrHeader('env', query, headers, noConflict),
     requires: getValueFromQueryOrHeader('requires', query, headers, noConflict),
     step: getValueFromQueryOrHeader('step', query, headers, noConflict),
+    source: getValueFromQueryOrHeader('source', query, headers, noConflict),
   }
 }
 
